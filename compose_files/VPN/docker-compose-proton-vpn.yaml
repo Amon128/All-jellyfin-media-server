@@ -30,9 +30,11 @@ services:
       - type: bind
         source: /dockerhdd/${COMMON_PATH}
         target: /${COMMON_PATH}
+        create_host_path: true
       - type: bind
         source: /dockerhdd/${COMMON_PATH}/gluetun
         target: /tmp/gluetun
+        create_host_path: true
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
     network_mode: service:gluetun
@@ -48,12 +50,15 @@ services:
       - type: bind
         source: /dockerhdd/${COMMON_PATH}
         target: /${COMMON_PATH}
+        create_host_path: true
       - type: bind
         source: /dockerhdd/${COMMON_PATH}/configs/qbittorrent
         target: /config
+        create_host_path: true
       - type: bind
         source: /dockerhdd/${COMMON_PATH}/qbittorrent/downloads
         target: /downloads
+        create_host_path: true
     restart: unless-stopped
   flaresolverr:
     image: ghcr.io/flaresolverr/flaresolverr:latest
@@ -77,6 +82,7 @@ services:
       - type: bind
         source: /dockerhdd/${COMMON_PATH}/configs/prowlarr
         target: /config
+        create_host_path: true
     ports:
       - "9696:9696"
     restart: unless-stopped
@@ -91,6 +97,7 @@ services:
       - type: bind
         source: /dockerhdd/${COMMON_PATH}/configs/jackett
         target: /config
+        create_host_path: true
     ports:
       - "9117:9117"
     restart: unless-stopped
@@ -105,15 +112,19 @@ services:
       - type: bind
         source: /dockerhdd/${COMMON_PATH}
         target: /${COMMON_PATH}
+        create_host_path: true
       - type: bind
         source: /dockerhdd/${COMMON_PATH}/configs/sonarr
         target: /config
+        create_host_path: true
       - type: bind
         source: /dockerhdd/${COMMON_PATH}/sonarr/tv
         target: /tv
+        create_host_path: true
       - type: bind
         source: /dockerhdd/${COMMON_PATH}/qbittorrent/downloads
         target: /downloads
+        create_host_path: true
     ports:
       - "8989:8989"
     restart: unless-stopped
@@ -128,15 +139,19 @@ services:
       - type: bind
         source: /dockerhdd/${COMMON_PATH}
         target: /${COMMON_PATH}
+        create_host_path: true
       - type: bind
         source: /dockerhdd/${COMMON_PATH}/configs/radarr
         target: /config
+        create_host_path: true
       - type: bind
         source: /dockerhdd/${COMMON_PATH}/radarr/movies
         target: /movies
+        create_host_path: true
       - type: bind
         source: /dockerhdd/${COMMON_PATH}/qbittorrent/downloads
         target: /downloads
+        create_host_path: true
     ports:
       - "7878:7878"
     restart: unless-stopped
@@ -157,21 +172,27 @@ services:
       - type: bind
         source: /dockerhdd/${COMMON_PATH}
         target: /${COMMON_PATH}
+        create_host_path: true
       - type: bind
         source: /dockerhdd/${COMMON_PATH}/configs/jellyfin
         target: /config
+        create_host_path: true
       - type: bind
         source: /dockerhdd/${COMMON_PATH}/jellyfin/cache
         target: /cache
+        create_host_path: true
       - type: bind
         source: /dockerhdd/${COMMON_PATH}/sonarr/tv
         target: /media/tv
+        create_host_path: true
       - type: bind
         source: /dockerhdd/${COMMON_PATH}/radarr/movies
         target: /media/movies
+        create_host_path: true
       - type: bind
         source: /dockerhdd/${COMMON_PATH}/qbittorrent/downloads
         target: /media/downloads
+        create_host_path: true
     restart: unless-stopped
   jellyseerr:
     image: fallenbagel/jellyseerr:latest
@@ -185,4 +206,5 @@ services:
       - type: bind
         source: /dockerhdd/${COMMON_PATH}/configs/jellyseerr
         target: /app/config
+        create_host_path: true
     restart: unless-stopped
