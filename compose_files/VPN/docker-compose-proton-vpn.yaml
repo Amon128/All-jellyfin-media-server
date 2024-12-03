@@ -30,7 +30,7 @@ services:
     volumes:
       - type:bind
         source:/dockerhdd/${COMMON_PATH}
-        target:${COMMON_PATH}
+        target:/${COMMON_PATH}
       - type:bind
         source:/dockerhdd/${COMMON_PATH}/gluetun
         target:/tmp/gluetun
@@ -49,7 +49,7 @@ services:
     volumes:
       - type:bind
         source:/dockerhdd/${COMMON_PATH}
-        target:${COMMON_PATH}
+        target:/${COMMON_PATH}
       - type:bind
         source:/dockerhdd/${COMMON_PATH}/configs/qbittorrent
         target:/config 
@@ -108,7 +108,7 @@ services:
     volumes:
       - type:bind
         source:/dockerhdd/${COMMON_PATH}
-        target:${COMMON_PATH}
+        target:/${COMMON_PATH}
       - type:bind
         source:/dockerhdd/${COMMON_PATH}/configs/sonarr
         target:/config 
@@ -131,7 +131,7 @@ services:
     volumes:
       - type:bind
         source:/dockerhdd/${COMMON_PATH}
-        target:${COMMON_PATH}
+        target:/${COMMON_PATH}
       - type:bind
         source:/dockerhdd/${COMMON_PATH}/configs/radarr
         target:/config 
@@ -160,7 +160,7 @@ services:
     volumes:
       - type:bind
         source:/dockerhdd/${COMMON_PATH}
-        target:${COMMON_PATH}
+        target:/${COMMON_PATH}
       - type:bind
         source:/dockerhdd/${COMMON_PATH}/configs/jellyfin
         target:/config 
