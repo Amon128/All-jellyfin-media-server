@@ -177,14 +177,6 @@ services:
         source:/dockerhdd/${COMMON_PATH}/qbittorrent/downloads
         target:/media/downloads
     restart: unless-stopped
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities:
-                - gpu
   jellyseerr:
     image: fallenbagel/jellyseerr:latest
     container_name: jellyseerr
