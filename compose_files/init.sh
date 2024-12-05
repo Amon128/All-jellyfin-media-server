@@ -14,7 +14,7 @@ mkdir /dockerhdd/data/sonarr
 mkdir /dockerhdd/data/sonarr/tv
 
 mkdir /dockerhdd/data/radarr
-mkdir /dockerhdd/data/sonarr/movies
+mkdir /dockerhdd/data/radarr/movies
 
 mkdir /dockerhdd/data/jellyfin
 mkdir /dockerhdd/data/jellyfin/cache
