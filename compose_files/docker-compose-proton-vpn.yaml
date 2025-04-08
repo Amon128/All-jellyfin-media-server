@@ -11,6 +11,8 @@ services:
       - "51820:51820/udp"
       - "46931:46931"
       - "46931:46931/udp"
+    devices:
+      - /dev/net/tun:/dev/net/tun
     environment:
       - VPN_SERVICE_PROVIDER=custom
       - VPN_TYPE=wireguard
